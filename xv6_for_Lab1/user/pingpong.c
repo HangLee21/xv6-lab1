@@ -12,6 +12,7 @@ int main(int argc, char *argv[])
   int pid = fork();
   // parent
   if(pid > 0){
+    // 关闭对应读写端 防止干扰
     close(p1[0]);
     close(p2[1]);
     write(p1[1], " ", 1);
@@ -23,6 +24,7 @@ int main(int argc, char *argv[])
   } 
   // child
   else if(pid == 0){
+    // 关闭对应读写端 防止干扰
     close(p1[1]);
     close(p2[0]);
     read(p1[0], c, sizeof c);

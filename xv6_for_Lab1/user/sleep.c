@@ -8,7 +8,9 @@ int main(int argc, char *argv[])
     fprintf(2, "Error\n");
     exit(-1);
   }
+  // 提取时长 
   sleep(atoi(argv[1]));
+  // 退出进程
   exit(0);
   return 0;
 }

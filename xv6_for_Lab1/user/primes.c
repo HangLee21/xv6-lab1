@@ -21,6 +21,7 @@ void findPrime(int *p1){
     close(p2[0]);
     int modNum = num;
     while(read(p1[0], &num, sizeof(int)) != 0){
+      // 筛法查找质数
       if(num % modNum != 0){
         write(p2[1], &num, sizeof(int));
       }

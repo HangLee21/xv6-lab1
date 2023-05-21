@@ -14,6 +14,8 @@ int main(int argc, char* argv[]){
     args[j++] = argv[i];
   }
   int k, idx = 0;
+  // 读取前一个函数的参数 并置于args中
+  // 根据空格和换行符分解
   while((k = read(0, prevArg, sizeof(prevArg))) >  0){
     for(int i = 0 ; i < k; i++){
       // 换行符
